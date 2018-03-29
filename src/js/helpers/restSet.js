@@ -2,7 +2,8 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
 export function registerAndLogin(thisParam) {
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/users/register', thisParam.state)
     .then((res) => {
@@ -44,7 +45,8 @@ export function setLikedImage(thisParam, imageid) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
     
     axios.patch(host + '/images/likes/' + imageid, {
         userid: userid
@@ -80,7 +82,8 @@ export function setUnlikedImage(thisParam, imageid) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.patch(host + '/images/unlikes/' + imageid, {
         userid: userid
@@ -117,7 +120,8 @@ export function setComment(thisParam, comment, imageid) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/users/user/' + userid, null, tokenHeader)
     .then((result) => {
@@ -168,7 +172,8 @@ export function setImage(thisParam) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/images', {
         url: thisParam.state.imageUrl,

@@ -2,7 +2,8 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
 export function login(thisParam, errorMessages) {
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/users/login', {
         "email": thisParam.state.email,
@@ -28,7 +29,8 @@ export function login(thisParam, errorMessages) {
 
 export function authorization(thisParam) {
     const token = localStorage.getItem('token');
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/users/auth', null, {
         headers: {
@@ -54,7 +56,8 @@ export function authAndGetSpecUserImages(thisParam) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/users/auth', null, tokenHeader)
     .then((res) => {
@@ -95,7 +98,8 @@ export function checkIfValidToken() {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/users/logout', null, tokenHeader)
     .then((res) => {
@@ -115,7 +119,8 @@ export function getAllImages(thisParam) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/images/allimages', null, tokenHeader)
     .then((res) => {
@@ -138,7 +143,8 @@ export function getSpecImageAndUser(thisParam, imageId) {
             'Authorization': 'Bearer ' + token
         }
     };
-    const host = process.env.REST_HOST + ':' + process.env.PORT;
+    const host = 'https://instagram-clone-api.herokuapp.com';
+    // const host = process.env.REST_HOST + ':' + process.env.PORT;
 
     axios.post(host + '/images/' + imageId, null, tokenHeader)
     .then((res) => {
