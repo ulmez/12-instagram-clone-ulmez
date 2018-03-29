@@ -1,1 +1,1 @@
-npm start
+./dist/index.html
