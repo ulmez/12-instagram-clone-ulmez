@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --progress --colors",
     "build": "webpack",
-    "start": "webpack-dev-server --watch"
+    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "author": "",
   "license": "ISC",
